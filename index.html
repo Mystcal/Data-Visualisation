@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+  <title> FIT3179 Data Visualisations II </title>
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
@@ -10,93 +12,79 @@
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
     integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   
   <!-- CSS file -->
-  <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/Mystcal/3179/main/css" media="all">
+  <link rel="stylesheet" type="text/css" href="css" media="all">
 
 
 </head>
+
 <body>
 
   <div class="page">
+
   <!-- pure grid group -->
     <div class="pure-g">
       <div class="pure-u-1-1">
         <h1>Worlds happiness, GDP & Population </h1>
+        <p>This visualisation explores which Countries in 2020, have the most life satisfaction and how does this 
+          correlate to the nation's GDP per Capita and the median age of the people of the nation
+        </p>
       </div>
     </div>
   <!-- end pure grid group -->
     
   <!-- pure grid group -->
     <div class="pure-g">
-      <div class="pure-u-1-2">
+      <div class="pure-u-1-1">
         <div class="description description-left">
-          <h2>This visualisation explores which Countries in 2020, have the most life satisfaction and how does this 
-          correlate to the nation's GDP per Capita and the median age of the people of the nation
-        </h2>
-          <p> The visualisation in the right shows the life satisfaction of the countries in the world in year 2020.</p>
+          <div id="choropleth_map" class="vis-container" ></div>
+        </div>
+      </div>
+    </div>
+  <!-- end pure grid group -->
+      
+  <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1" >
+        <p> The choropleth map above shows the life satisfaction of the countries in the world in year 2020.</p>
           <p>we can see that the Canada ( Top Left corner ),
             Iceland, Norway, Sweden, Finland, Ireland, Switzerland, Germany, Denmark, Netherlands, Austria ( Middle Top ),
           Australia and New Zealand ( Bottom Right corner ) are in blue which shows that their people very satisfies their 
-            life.
-          </p>
+            life.</p>
           <p>Whereas, Papua New Guinea, Fiji, Timor-Leste, Brunei ( Bottom Right corner ), North Korea ( Top Right corner ),
           Bhutan, Oman, Qatar, Sudan, South Sudan, Central African Republic, Democratic Republic of the Congo, Angola, 
             Guinea-Bissau ( Middle ), Guyana, SurinameTrinidad and Tobago, Haiti, Cuba, Bahamas, Belize ( Left ),
           and Greenland ( Top Left corner ) are in blood red color which shows that their people are not satisfy their living now, 
-            which we can say that they are living in sadness.
-          </p>
-        </div>
-      </div>
-      
-      <div class="pure-u-1-2">
-        <div id="choropleth_map" class="vis-container"></div>
+            which we can say that they are living in sadness.</p>
       </div>
     </div>
     
     <!-- end pure grid group -->
 
-    <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1-3">
-        <div class="description description-left">
-          <p>Using all three columns without merging. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat
-            sed. Egestas purus viverra accumsan in nisl. Egestas purus viverra accumsan in nisl.</p>
+      <!-- pure grid group -->
+      <div class="pure-g">
+        <div class="pure-u-1-1">
+          <div class="description description-left">
+            <div id="bubble_plot" class="vis-container" ></div>
+          </div>
         </div>
       </div>
-      <div class="pure-u-1-3">
-        <div id="vis4" class="vis-container"></div>
-      </div>
-      <div class="pure-u-1-3" style="width: 31.5%;">
-        <div id="vis3" class="vis-container" style="margin-left: 15px;"></div>
-      </div>
-
-    </div>
     <!-- end pure grid group -->
 
-    <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-2-3">
-        <div id="choropleth_map" class="vis-container"></div>
-      </div>
-      <div class="pure-u-1-3">
-        <div class="description description-right">
-          <h2>First and Second Columns Combined</h2>
-          <p>The first and second columns are combined. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien
-            faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
-        </div>
-      </div>
 
-    </div>
     <!-- end pure grid group -->
 
     <div class="pure-g">
       <div class="pure-u-1-1 small-font">
         <p>This visualisation is created by FIT3179 LIM YU JIN 32637888. 
-          The datasource is <a href="https://www.kaggle.com/datasets/programmerrdai/happiness-and-life-satisfaction?select=evolution-of-happiness-inequality-within-countries-during-periods-of-uninterrupted-economic-growth.csv" 
-                               target=" _blank">some data from kaggle</href>.</p>
+          The datasource is from <a href="https://www.kaggle.com/datasets/programmerrdai/happiness-and-life-satisfaction?select=evolution-of-happiness-inequality-within-countries-during-periods-of-uninterrupted-economic-growth.csv" 
+                               target=" _blank">here</href>.</p>
       </div>
     </div>
 
@@ -108,7 +96,14 @@
   vegaEmbed('#choropleth_map', spec2,{"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
-</script>
+  </script>
+
+  <script type="text/javascript">
+  var spec1 = "bubble_plot.vg.json";
+  vegaEmbed('#bubble_plot', spec1,{"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  </script>
 
 </body>
 </html>
