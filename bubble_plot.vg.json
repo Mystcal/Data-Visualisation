@@ -1,0 +1,118 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 400,
+    "title": "GDP vs Happiness",
+    "data": {
+    "url": "https://raw.githubusercontent.com/Mystcal/3179/main/happiness-gdp.csv"
+    },
+    "transform": [{"filter": "Country_selection == null || datum.Country == Country_selection"},
+                    {"filter": "datum.Population > Population_Above"}],
+    "params":[
+        {
+        "name": "Country_selection",
+        "bind": {
+            "input": "select",
+            "options": [
+            null,
+            "Afghanistan", "Albania", "Algeria", "Andorra", "Angola","Antigua and Barbuda", "Argentina", "Armenia", "Australia","Austria", "Azerbaijan",
+            "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Boliva", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi",
+            "Cambodia", "Cameroon", "Canada", "CApe Verde", "Central African Rep.", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Costa Rica", "Cote d'lvoire", "Croatia", "Cuba", "Cyprus", "Czechia", 
+            "Dem. Rep. Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia",
+            "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Greenland", "Grnada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana",
+            "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", 
+            "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait", "Kyrgzstan", 
+            "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", 
+            "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Maurtiana", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar",
+            "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealland", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway",
+            "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", 
+            "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Princpe","Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "S. Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", 
+            "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", 
+            "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States of America", "Uruguay", "Uzbekistan", 
+            "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Zembia", "Zimbabwe"
+            ],
+            "labels":[
+                "Show All",
+            "Afghanistan", "Albania", "Algeria", "Andorra", "Angola","Antigua and Barbuda", "Argentina", "Armenia", "Australia","Austria", "Azerbaijan",
+            "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Boliva", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi",
+            "Cambodia", "Cameroon", "Canada", "CApe Verde", "Central African Rep.", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Costa Rica", "Cote d'lvoire", "Croatia", "Cuba", "Cyprus", "Czechia", 
+            "Dem. Rep. Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia",
+            "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Greenland", "Grnada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana",
+            "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", 
+            "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait", "Kyrgzstan", 
+            "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", 
+            "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Maurtiana", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar",
+            "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealland", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway",
+            "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", 
+            "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Princpe","Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "S. Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", 
+            "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", 
+            "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States of America", "Uruguay", "Uzbekistan", 
+            "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Zembia", "Zimbabwe"
+            ],
+            "name": "Country Selection "
+            }
+        },
+        {"name": "Population_Above","value": 0,
+                        "bind": {"input": "range",
+                        "min": 0,
+                        "max": 100000000,
+                        "step": 1000000,
+                        "name": "Minimum Population: "}
+                    }
+        ],
+    "mark": "circle",
+    "encoding": {
+        "x": {
+            "field": "GDP_per_capita",
+            "type": "quantitative",
+            "title": "GDP per Capita",
+            "axis": {"tickCount": 7},
+            "scale": {"type":"log","domain":[1,10000000]}
+            },
+        "y": {
+            "field": "Life_satisfaction",
+            "type": "quantitative"
+            },
+        "color": {
+            "field": "Continent",
+            "type": "nominal",
+            "scale": {
+                "domain": [
+                "North America",
+                "South America",
+                "Europe",
+                "Africa",
+                "Asia",
+                "Oceania"
+                ],
+                "range": [
+                "#e41a1c",
+                "#984ea3",
+                "#ff7f00",
+                "#a6cee3",
+                "#377eb8",
+                "#a65628"
+                ]}
+        },
+        "opacity":{
+            "value": 0.7},
+        "size": {
+            "field": "Population",
+            "type": "quantitative",
+            "scale":{
+                "type": "threshold",
+                "domain": [1000000, 10000000, 50000000, 100000000, 500000000],
+                "range": [10, 50, 150, 200, 300, 400]
+            },
+            "legend": {"format":".1s"}
+            },
+        "tooltip": [
+            {"field":"Country", "type": "nominal"},
+            {"field": "GDP_per_capita","title":"GDP per capita", "type": "quantitative", "format":","},
+            {"field": "Life_satisfaction","title":"Life satisfaction", "type": "quantitative", "format":","},
+            {"field": "Population", "type": "quantitative", "format": ","}
+        ]
+            }
+            
+        }
+
