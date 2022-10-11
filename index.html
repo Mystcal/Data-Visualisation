@@ -66,13 +66,69 @@
                     on the right shows the relationship between the <span class="hilight">Life Satisfaction</span>
                     and the <span class="hilight">GDP per capita</span> of the Countries in the world.
                 </p>
+                <br>
+                <p>Countries which plot in red is located in <span class="hilight">North America</span>, 
+                    plot in purple is located in <span class="hilight">South America</span>, 
+                    plot in orange is located in <span class="hilight">Europe</span>, 
+                    plot in light-blue is located in <span class="hilight">Africa</span>,
+                    plot in dark blue is located in <span class="hilight">Asia</span>, 
+                    whereas plot in brown is located in <span class="hilight">Oceania</span>.
+                </p>
             </div>
             <div id="bubble_plot"></div>
         </div> 
     </section>
 
+    <section id="plot2">
+        <h2 class="heading">Top N Countries Life Expectancy</h2>
+        <div id="bump">
+            <div id="bump_chart"></div>
+            <div id="bump_des">
+                <p>The <span class="hilight">Bump Chart</span>
+                    on the left shows the <span class="hilight">Top N</span>
+                    Countries of highest <span class="hilight">Life Expectancy</span>
+                </p>
+                <br>
+                <p>We can see that <span class="hilight">Japan</span> have a consecutive
+                    <span class="hilight">Championship</span> through these years, and 
+                    <span class="hilight">Switzerland</span>
+                    follows on its back gets the <span class="hilight">2nd</span> through these years.
+                </p>
+                <br>
+                <p><span class="hilight">Australia</span> 
+                    drops out from the <span class="hilight">Top 5</span> in the year 2014, and was replace by 
+                    <span class="hilight">Singapore</span> till Year 2020.
+
+                </p>
+            </div>
+        </div> 
+    </section>
+
+    <section id="plot3">
+        <h2 class="heading">Countries Population</h2>
+        <div id="alluvial">
+            <div id="sankey_des">
+                <p>The <span class="hilight">Alluvial Diagram</span> 
+                    located at the bottom shows the <span class="hilight">Population</span> 
+                    of the <span class="hilight">Continent</span> and the 
+                    <span class="hilight">Countries</span> in the world.
+                </p>
+                <br>
+                <p>We can see that <span class="hilight">China</span> have the 
+                    <span class="hilight">No.1</span> population in the World,
+                    which tale up <span class="hilight">18.7%</span> of the 
+                    World's population.
+                    the <span class="hilight">2nd</span> is followed by
+                    <span class="hilight">India</span> which take up 
+                    <span class="hilight">17.9%</span> of the World's population
+                </p>
+            </div>
+            <div id="sankey"></div>
+        </div> 
+    </section>
+
     <script type="text/javascript">
-    var spec2 = "https://raw.githubusercontent.com/Mystcal/3179/main/choropleth_map-hapiness.vg.json";
+    var spec2 = "choropleth_map.vg.json";
     vegaEmbed('#choropleth_map', spec2,{"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
@@ -81,6 +137,20 @@
     <script type="text/javascript">
     var spec1 = "https://raw.githubusercontent.com/Mystcal/3179/main/bubble_plot.vg.json";
     vegaEmbed('#bubble_plot', spec1,{"actions": false}).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+    </script>
+
+    <script type="text/javascript">
+    var spec3 = "https://raw.githubusercontent.com/Mystcal/3179/main/bump_chart.vg.json";
+    vegaEmbed('#bump_chart', spec3,{"actions": false}).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+    </script>
+
+    <script type="text/javascript">
+    var spec4 = "https://raw.githubusercontent.com/Mystcal/3179/main/sankey.vg.json";
+    vegaEmbed('#sankey', spec4,{"actions": false}).then(function(result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
     </script>
