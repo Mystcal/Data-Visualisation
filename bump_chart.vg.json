@@ -9,7 +9,7 @@
     },
     "width": 600,
     "height": 400,
-    "data": {"url":"satisfication-expectancy.csv"
+    "data": {"url":"https://raw.githubusercontent.com/Mystcal/3179/main/satisfication-expectancy.csv"
     },
     "params": [
       {
