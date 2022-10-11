@@ -325,7 +325,7 @@
       {
         "name": "stackNames",
         "type": "ordinal",
-        "range": ["Organization", "Municipality"],
+        "range": ["Continent", "Country"],
         "domain": ["stk1", "stk2"]
       }
     ],
