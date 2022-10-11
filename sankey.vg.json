@@ -1,0 +1,552 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v3.0.json",
+    "height": 3000,
+    "width": 1000,
+    "data": [
+      {
+        "name": "rawData",
+        "values": [
+                {"stk1": "Asia", "stk2": "Afghanistan", "doc_count":38928341 },
+                {"stk1": "Europe", "stk2": "Albania", "doc_count": 2877800},
+                {"stk1": "Africa", "stk2": "Algeria", "doc_count": 48351043},
+                {"stk1": "Europe", "stk2": "Andorra", "doc_count": 77265},
+                {"stk1": "Africa", "stk2": "Angola", "doc_count": 32866267},
+                {"stk1": "North America", "stk2": "Antigua and Barbuda", "doc_count": 97928},
+                {"stk1": "South America", "stk2": "Argentina", "doc_count": 45195777},
+                {"stk1": "Asia", "stk2": "Armenia", "doc_count": 2963234},
+                {"stk1": "Oceania", "stk2": "Australia", "doc_count": 25499881},
+                {"stk1": "Europe", "stk2": "Austria", "doc_count": 9006400},
+                {"stk1": "Asia", "stk2": "Azerbaijan", "doc_count": 10139175},
+                {"stk1": "North America", "stk2": "Bahamas", "doc_count": 393248},
+                {"stk1": "Asia", "stk2": "Bahrain", "doc_count": 1701583},
+                {"stk1": "Asia", "stk2": "Bangladesh", "doc_count": 164689383},
+                {"stk1": "North America", "stk2": "Barbados", "doc_count": 287371},
+                {"stk1": "Europe", "stk2": "Belarus", "doc_count": 9449321},
+                {"stk1": "Europe", "stk2": "Belgium", "doc_count": 11589616},
+                {"stk1": "North America", "stk2": "Belize", "doc_count": 397621},
+                {"stk1": "Africa", "stk2": "Benin", "doc_count": 12123198},
+                {"stk1": "Asia", "stk2": "Bhutan", "doc_count": 771612},
+                {"stk1": "South America", "stk2": "Bolivia", "doc_count": 11673029},
+                {"stk1": "Europe", "stk2": "Bosnia and Herzegovina", "doc_count": 3280815},
+                {"stk1": "Africa", "stk2": "Botswana", "doc_count": 2351625},
+                {"stk1": "South America", "stk2": "Brazil", "doc_count": 212559409},
+                {"stk1": "Asia", "stk2": "Brunei", "doc_count": 437483},
+                {"stk1": "Europe", "stk2": "Bulgaria", "doc_count": 6948445},
+                {"stk1": "Africa", "stk2": "Burkina Faso", "doc_count": 20903278},
+                {"stk1": "Africa", "stk2": "Burundi", "doc_count": 11890781},
+                {"stk1": "Asia", "stk2": "Cambodia", "doc_count": 16718971},
+                {"stk1": "Africa", "stk2": "Cameroon", "doc_count": 26545864},
+                {"stk1": "North America", "stk2": "Canada", "doc_count": 37742157},
+                {"stk1": "Africa", "stk2": "Cape Verde", "doc_count": 555988},
+                {"stk1": "Africa", "stk2": "Central African Republic", "doc_count": 4829764},
+                {"stk1": "Africa", "stk2": "Chad", "doc_count": 16425859},
+                {"stk1": "South America", "stk2": "Chile", "doc_count": 19116209},
+                {"stk1": "Asia", "stk2": "China", "doc_count": 1439323774},
+                {"stk1": "South America", "stk2": "Columbia", "doc_count": 50882884},
+                {"stk1": "Africa", "stk2": "Comoros", "doc_count": 869595},
+                {"stk1": "Africa", "stk2": "Congo", "doc_count": 5518092},
+                {"stk1": "North America", "stk2": "Costa Rica", "doc_count": 5094114},
+                {"stk1": "Africa", "stk2": "Cote d'lvoire", "doc_count": 26378275},
+                {"stk1": "Europe", "stk2": "Croatia", "doc_count": 4105258},
+                {"stk1": "North America", "stk2": "Cuba", "doc_count": 11326616},
+                {"stk1": "Europe", "stk2": "Cyprus", "doc_count": 1207361},
+                {"stk1": "Europe", "stk2": "Czechia", "doc_count": 10708982},
+                {"stk1": "Africa", "stk2": "Democratic Republic of Congo", "doc_count": 89561404},
+                {"stk1": "Europe", "stk2": "Denmark", "doc_count": 5792203},
+                {"stk1": "Africa", "stk2": "Djibouti", "doc_count": 988002},
+                {"stk1": "North America", "stk2": "Dominica", "doc_count": 71991},
+                {"stk1": "North America", "stk2": "Dominican Republic", "doc_count": 10847904},
+                {"stk1": "South America", "stk2": "Ecuador", "doc_count": 17643060},
+                {"stk1": "Africa", "stk2": "Egypt", "doc_count": 102334403},
+                {"stk1": "North America", "stk2": "El Salvador", "doc_count": 6484201},
+                {"stk1": "Africa", "stk2": "Equatorial Guinea", "doc_count": 1402985},
+                {"stk1": "Africa", "stk2": "Eritrea", "doc_count": 3546427},
+                {"stk1": "Europe", "stk2": "Estonia", "doc_count": 1326539},
+                {"stk1": "Africa", "stk2": "Eswatini", "doc_count": 1160164},
+                {"stk1": "Africa", "stk2": "Ethiopia", "doc_count": 114963583},
+                {"stk1": "Oceania", "stk2": "Fiji", "doc_count": 896444},
+                {"stk1": "Europe", "stk2": "Finland", "doc_count": 5540718},
+                {"stk1": "Europe", "stk2": "France", "doc_count": 65273512},
+                {"stk1": "Africa", "stk2": "Gabon", "doc_count": 2225728},
+                {"stk1": "Africa", "stk2": "Gambia", "doc_count": 2416664},
+                {"stk1": "Asia", "stk2": "Georgia", "doc_count": 3989175},
+                {"stk1": "Europe", "stk2": "Germany", "doc_count": 82782945},
+                {"stk1": "Africa", "stk2": "Ghana", "doc_count": 31072945},
+                {"stk1": "Europe", "stk2": "Greece", "doc_count": 10423056},
+                {"stk1": "North America", "stk2": "Grenada", "doc_count": 112519},
+                {"stk1": "North America", "stk2": "Guatemala", "doc_count": 17915567},
+                {"stk1": "Africa", "stk2": "Guinea", "doc_count": 13132792},
+                {"stk1": "Africa", "stk2": "Guinea-Bissau", "doc_count": 1967998},
+                {"stk1": "South America", "stk2": "Guyana", "doc_count": 786559},
+                {"stk1": "North America", "stk2": "Haiti", "doc_count": 11402533},
+                {"stk1": "Norht America", "stk2": "Honduras", "doc_count": 9904608},
+                {"stk1": "Europe", "stk2": "Hungary", "doc_count": 9660350},
+                {"stk1": "Europe", "stk2": "Iceland", "doc_count": 341250},
+                {"stk1": "Asia", "stk2": "India", "doc_count": 1380004385},
+                {"stk1": "Asia", "stk2": "Indonesia", "doc_count": 273523621},
+                {"stk1": "Asia", "stk2": "Iran", "doc_count": 83992953},
+                {"stk1": "Asia", "stk2": "Iraq", "doc_count": 40222503},
+                {"stk1": "Europe", "stk2": "Ireland", "doc_count": 4937796},
+                {"stk1": "Asia", "stk2": "Israel", "doc_count": 8655541},
+                {"stk1": "Europe", "stk2": "Italy", "doc_count": 60461828},
+                {"stk1": "North America", "stk2": "Jamaica", "doc_count": 2961161},
+                {"stk1": "Asia", "stk2": "Japan", "doc_count": 126476458},
+                {"stk1": "Asia", "stk2": "Jordan", "doc_count": 10203140},
+                {"stk1": "Asia", "stk2": "Kazakhstan", "doc_count": 18776707},
+                {"stk1": "Africa", "stk2": "Kenya", "doc_count": 53771300},
+                {"stk1": "Oceania", "stk2": "Kiribati", "doc_count": 119446},
+                {"stk1": "Asia", "stk2": "Kuwait", "doc_count": 4270563},
+                {"stk1": "Asia", "stk2": "Kyrgyzstan", "doc_count": 6524191},
+                {"stk1": "Asia", "stk2": "Laos", "doc_count": 7275556},
+                {"stk1": "Europe", "stk2": "Latvia", "doc_count": 1886202},
+                {"stk1": "Asia", "stk2": "Lebanon", "doc_count": 6825442},
+                {"stk1": "Africa", "stk2": "Lesotho", "doc_count": 2142252},
+                {"stk1": "Africa", "stk2": "Liberia", "doc_count": 5057677},
+                {"stk1": "Africa", "stk2": "Libya", "doc_count": 6871287},
+                {"stk1": "Europe", "stk2": "Liechtenstein", "doc_count": 38137},
+                {"stk1": "Europe", "stk2": "Lithuania", "doc_count": 2722291},
+                {"stk1": "Europe", "stk2": "Luxembourg", "doc_count": 625976},
+                {"stk1": "Africa", "stk2": "Madagascar", "doc_count": 27691019},
+                {"stk1": "Africa", "stk2": "Malawi", "doc_count": 19129955},
+                {"stk1": "Asia", "stk2": "Malaysia", "doc_count": 32365998},
+                {"stk1": "Asia", "stk2": "Maldives", "doc_count": 540542},
+                {"stk1": "Africa", "stk2": "Mali", "doc_count": 20250834},
+                {"stk1": "Europe", "stk2": "Malta", "doc_count": 441539},
+                {"stk1": "Oceania", "stk2": "Marshall Islands", "doc_count": 59194},
+                {"stk1": "Africa", "stk2": "Mauritania", "doc_count": 4649660},
+                {"stk1": "Africa", "stk2": "Mauritius", "doc_count": 1271767},
+                {"stk1": "North America", "stk2": "Mexico", "doc_count": 128932753},
+                {"stk1": "Oceania", "stk2": "Micronesia", "doc_count": 115021},
+                {"stk1": "Europe", "stk2": "Moldova", "doc_count": 4033963},
+                {"stk1": "Europe", "stk2": "Monaco", "doc_count": 39244},
+                {"stk1": "Asia", "stk2": "Mongolia", "doc_count": 3278292},
+                {"stk1": "Europe", "stk2": "Montenegro", "doc_count": 628062},
+                {"stk1": "Africa", "stk2": "Morocco", "doc_count": 36910558},
+                {"stk1": "Africa", "stk2": "Mozambique", "doc_count": 31255435},
+                {"stk1": "Asia", "stk2": "Myanmar", "doc_count": 54409794},
+                {"stk1": "Africa", "stk2": "Namibia", "doc_count": 2540916},
+                {"stk1": "Oceania", "stk2": "Nauru", "doc_count": 10834},
+                {"stk1": "Asia", "stk2": "Nepal", "doc_count": 29136808},
+                {"stk1": "Europe", "stk2": "Netherlands", "doc_count": 17134873},
+                {"stk1": "Oceania", "stk2": "New Zealand", "doc_count": 4822233},
+                {"stk1": "North America", "stk2": "Nicaragua", "doc_count": 6624554},
+                {"stk1": "Africa", "stk2": "Niger", "doc_count": 24206636},
+                {"stk1": "Africa", "stk2": "Nigeria", "doc_count": 206139587},
+                {"stk1": "Asia", "stk2": "North Korea", "doc_count": 25778815},
+                {"stk1": "Europe", "stk2": "North Macedonia", "doc_count": 2083380},
+                {"stk1": "Europe", "stk2": "Norway", "doc_count": 5421242},
+                {"stk1": "Asia", "stk2": "Oman", "doc_count": 5106622},
+                {"stk1": "Asia", "stk2": "Pakistan", "doc_count": 220892331},
+                {"stk1": "Oceania", "stk2": "Palau", "doc_count": 18092},
+                {"stk1": "Asia", "stk2": "Palestine", "doc_count": 5101416},
+                {"stk1": "North America", "stk2": "Panama", "doc_count": 4314768},
+                {"stk1": "Oceania", "stk2": "Papua New Guinea", "doc_count": 8947027},
+                {"stk1": "South America", "stk2": "Paraguay", "doc_count": 7132530},
+                {"stk1": "South America", "stk2": "Peru", "doc_count": 32971845},
+                {"stk1": "Asia", "stk2": "Philippines", "doc_count": 109581085},
+                {"stk1": "Europe", "stk2": "Poland", "doc_count": 37846605},
+                {"stk1": "Europe", "stk2": "Portugal", "doc_count": 10196707},
+                {"stk1": "Asia", "stk2": "Qatar", "doc_count": 2881060},
+                {"stk1": "Europe", "stk2": "Romania", "doc_count": 19237682},
+                {"stk1": "Europe", "stk2": "Russia", "doc_count": 145934460},
+                {"stk1": "Africa", "stk2": "Rwanda", "doc_count": 12952209},
+                {"stk1": "North America", "stk2": "Saint Kitts and Newis", "doc_count": 53192},
+                {"stk1": "North America", "stk2": "Saint Lucia", "doc_count": 183629},
+                {"stk1": "North America", "stk2": "Saint Vincent and the Grenadines", "doc_count": 110947},
+                {"stk1": "Oceania", "stk2": "Samoa", "doc_count": 198410},
+                {"stk1": "Europe", "stk2": "San Marino", "doc_count": 33938},
+                {"stk1": "Africa", "stk2": "Sao Tome and Principe", "doc_count": 219161},
+                {"stk1": "Asia", "stk2": "Saudi Arabia", "doc_count": 34813867},
+                {"stk1": "Africa", "stk2": "Senegal", "doc_count": 16743930},
+                {"stk1": "Europe", "stk2": "Serbia", "doc_count": 8737370},
+                {"stk1": "Africa", "stk2": "Seyvhelles", "doc_count": 98340},
+                {"stk1": "Africa", "stk2": "Sierra Leone", "doc_count": 7976985},
+                {"stk1": "Asia", "stk2": "Singapore", "doc_count": 5850343},
+                {"stk1": "Europe", "stk2": "Slovakia", "doc_count": 5459643},
+                {"stk1": "Europe", "stk2": "Slovenia", "doc_count": 2078931},
+                {"stk1": "Oceania", "stk2": "Solomon Islands", "doc_count": 686878},
+                {"stk1": "Africa", "stk2": "Somalia", "doc_count": 15893219},
+                {"stk1": "Africa", "stk2": "South Africa", "doc_count": 59308690},
+                {"stk1": "Asia", "stk2": "South Korea", "doc_count": 51269183},
+                {"stk1": "Africa", "stk2": "South Sudan", "doc_count": 11193729},
+                {"stk1": "Europe", "stk2": "Spain", "doc_count": 46764783},
+                {"stk1": "Asia", "stk2": "Sri Lanka", "doc_count": 21413250},
+                {"stk1": "Africa", "stk2": "Sudan", "doc_count": 43849269},
+                {"stk1": "South America", "stk2": "Suriname", "doc_count": 586634},
+                {"stk1": "Europe", "stk2": "Sweden", "doc_count": 10099270},
+                {"stk1": "Europe", "stk2": "Switzerland", "doc_count": 8654618},
+                {"stk1": "Asia", "stk2": "Syria", "doc_count": 17500657},
+                {"stk1": "Asia", "stk2": "Taiwan", "doc_count": 23816775},
+                {"stk1": "Asia", "stk2": "Tajikistan", "doc_count": 9537642},
+                {"stk1": "Asia", "stk2": "Thailand", "doc_count": 59734213},
+                {"stk1": "Asia", "stk2": "Timor-Leste", "doc_count": 1318442},
+                {"stk1": "Africa", "stk2": "Togo", "doc_count": 8278736},
+                {"stk1": "Oceania", "stk2": "Tonga", "doc_count": 105697},
+                {"stk1": "North America", "stk2": "Trinidad and Tobago", "doc_count": 1399491},
+                {"stk1": "Africa", "stk2": "Tunisia", "doc_count": 11818618},
+                {"stk1": "Asia", "stk2": "Turkey", "doc_count": 84339067},
+                {"stk1": "Asia", "stk2": "Turkmenistan", "doc_count": 6031187},
+                {"stk1": "Oceania", "stk2": "Tuvalu", "doc_count": 11792},
+                {"stk1": "Africa", "stk2": "Uganda", "doc_count": 45741000},
+                {"stk1": "Europe", "stk2": "Ukraine", "doc_count": 43733759},
+                {"stk1": "Asia", "stk2": "United Arab Emirates", "doc_count": 9890400},
+                {"stk1": "Europe", "stk2": "United Kingdom", "doc_count": 67886004},
+                {"stk1": "North America", "stk2": "United States of America", "doc_count": 331002647},
+                {"stk1": "South America", "stk2": "Uruguay", "doc_count": 3473727},
+                {"stk1": "Asia", "stk2": "Uzbekistan", "doc_count": 33469199},
+                {"stk1": "Oceania", "stk2": "Vanuatu", "doc_count": 307150},
+                {"stk1": "South America", "stk2": "Venezuela", "doc_count": 24835943},
+                {"stk1": "Asia", "stk2": "Vietnam", "doc_count": 97338583},
+                {"stk1": "Asia", "stk2": "Yemen", "doc_count": 29825968},
+                {"stk1": "Africa", "stk2": "Zambia", "doc_count": 18383956},
+                {"stk1": "Africa", "stk2": "Zimbawe", "doc_count": 14862927}
+              ],
+        "transform": [
+          {"type": "formula", "expr": "datum.stk1", "as": "stk1"},
+          {"type": "formula", "expr": "datum.stk2", "as": "stk2"},
+          {"type": "formula", "expr": "datum.doc_count", "as": "size"}
+        ]
+      },
+      {
+        "name": "nodes",
+        "source": "rawData",
+        "transform": [
+          {
+            "type": "filter",
+            "expr": "!groupSelector || groupSelector.stk1 == datum.stk1 || groupSelector.stk2 == datum.stk2"
+          },
+          {"type": "formula", "expr": "datum.stk1+datum.stk2", "as": "key"},
+          {"type": "fold", "fields": ["stk1", "stk2"], "as": ["stack", "grpId"]},
+          {
+            "type": "formula",
+            "expr": "datum.stack == 'stk1' ? datum.stk1+' '+datum.stk2 : datum.stk2+' '+datum.stk1",
+            "as": "sortField"
+          },
+          {
+            "type": "stack",
+            "groupby": ["stack"],
+            "sort": {"field": "sortField", "order": "descending"},
+            "field": "size"
+          },
+          {"type": "formula", "expr": "(datum.y0+datum.y1)/2", "as": "yc"}
+        ]
+      },
+      {
+        "name": "groups",
+        "source": "nodes",
+        "transform": [
+          {
+            "type": "aggregate",
+            "groupby": ["stack", "grpId"],
+            "fields": ["size"],
+            "ops": ["sum"],
+            "as": ["total"]
+          },
+          {
+            "type": "stack",
+            "groupby": ["stack"],
+            "sort": {"field": "grpId", "order": "descending"},
+            "field": "total"
+          },
+          {"type": "formula", "expr": "scale('y', datum.y0)", "as": "scaledY0"},
+          {"type": "formula", "expr": "scale('y', datum.y1)", "as": "scaledY1"},
+          {
+            "type": "formula",
+            "expr": "datum.stack == 'stk1'",
+            "as": "rightLabel"
+          },
+          {
+            "type": "formula",
+            "expr": "datum.total/domain('y')[1]",
+            "as": "percentage"
+          }
+        ]
+      },
+      {
+        "name": "destinationNodes",
+        "source": "nodes",
+        "transform": [{"type": "filter", "expr": "datum.stack == 'stk2'"}]
+      },
+      {
+        "name": "edges",
+        "source": "nodes",
+        "transform": [
+          {"type": "filter", "expr": "datum.stack == 'stk1'"},
+          {
+            "type": "lookup",
+            "from": "destinationNodes",
+            "key": "key",
+            "fields": ["key"],
+            "as": ["target"]
+          },
+          {
+            "type": "linkpath",
+            "orient": "horizontal",
+            "shape": "diagonal",
+            "sourceY": {"expr": "scale('y', datum.yc)"},
+            "sourceX": {"expr": "scale('x', 'stk1') + bandwidth('x')"},
+            "targetY": {"expr": "scale('y', datum.target.yc)"},
+            "targetX": {"expr": "scale('x', 'stk2')"}
+          },
+          {
+            "type": "formula",
+            "expr": "range('y')[0]-scale('y', datum.size)",
+            "as": "strokeWidth"
+          },
+          {
+            "type": "formula",
+            "expr": "datum.size/domain('y')[1]",
+            "as": "percentage"
+          }
+        ]
+      }
+    ],
+    "scales": [
+      {
+        "name": "x",
+        "type": "band",
+        "range": "width",
+        "domain": ["stk1", "stk2"],
+        "paddingOuter": 0.05,
+        "paddingInner": 0.95
+      },
+      {
+        "name": "y",
+        "type": "linear",
+        "range": "height",
+        "domain": {"data": "nodes", "field": "y1"}
+      },
+      {
+          "name": "color",
+          "type": "ordinal",
+          "range": "category",
+          "domain": {"data": "rawData", "fields": ["stk1", "stk2"]}
+        },
+      {
+        "name": "stackNames",
+        "type": "ordinal",
+        "range": ["Organization", "Municipality"],
+        "domain": ["stk1", "stk2"]
+      }
+    ],
+    "axes": [
+      {
+        "orient": "bottom",
+        "scale": "x",
+        "domain": false,
+        "ticks": false,
+        "labelPadding": 20,
+        "encode": {
+          "labels": {
+            "update": {
+              "text": {
+                "scale": "stackNames",
+                "field": "value",
+                "fontWeight": "bold",
+                "fontSize": 14
+              }
+            }
+          }
+        }
+      },
+      {
+        "orient": "top",
+        "scale": "x",
+        "domain": false,
+        "ticks": false,
+        "labelPadding": 20,
+        "encode": {
+          "labels": {
+            "update": {
+              "text": {
+                "scale": "stackNames",
+                "field": "value",
+                "fontWeight": "bold",
+                "fontSize": 14
+              }
+            }
+          }
+        }
+      },
+      {
+        "orient": "left",
+        "scale": "y",
+        "labels": false,
+        "domain": false,
+        "ticks": false
+      }
+    ],
+    "marks": [
+      {
+        "type": "rect",
+        "from": {"data": "nodes"},
+        "encode": {
+          "enter": {
+            "stroke": {"value": "#000"},
+            "strokeWidth": {"value": 1},
+            "width": {"scale": "x", "band": 1},
+            "x": {"scale": "x", "field": "stack"},
+            "y": {"field": "y0", "scale": "y"},
+            "y2": {"field": "y1", "scale": "y"}
+          }
+        }
+      },
+      {
+        "type": "path",
+        "name": "edgeMark",
+        "from": {"data": "edges"},
+        "clip": true,
+        "encode": {
+          "update": {
+            "stroke": [
+              {
+                "test": "groupSelector && groupSelector.stack=='stk1'",
+                "scale":"color",
+                "field": "stk2"
+              },
+              {"scale": "color","field":"stk1"}
+            ],
+            "strokeWidth": {"field": "strokeWidth"},
+            "path": {"field": "path"},
+            "strokeOpacity": {
+              "signal": "!groupSelector && (groupHover.stk1 == datum.stk1 || groupHover.stk2 == datum.stk2) ? 0.9 : 0.3"
+            },
+            "zindex": {
+              "signal": "!groupSelector && (groupHover.stk1 == datum.stk1 || groupHover.stk2 == datum.stk2) ? 1 : 0"
+            },
+            "tooltip": {
+              "signal": "datum.stk1 + ' → ' + datum.stk2 + '    ' + format(datum.size, ',.0f') + '   (' + format(datum.percentage, '.1%') + ')'"
+            }
+          },
+          "hover": {"strokeOpacity": {"value": 1}}
+        }
+      },
+      {
+        "type": "rect",
+        "name": "groupMark",
+        "from": {"data": "groups"},
+        "encode": {
+          "enter": {
+            "fill": {"scale": "color","field":"grpId"},
+            "width": {"scale": "x", "band": 1}
+          },
+          "update": {
+            "x": {"scale": "x", "field": "stack"},
+            "y": {"field": "scaledY0"},
+            "y2": {"field": "scaledY1"},
+            "fillOpacity": {"value": 0.6},
+            "tooltip": {
+              "signal": "datum.grpId + '   ' + format(datum.total, ',.0f') + '   (' + format(datum.percentage, '.1%') + ')'"
+            }
+          },
+          "hover": {"fillOpacity": {"value": 1}}
+        }
+      },
+      {
+        "type": "text",
+        "from": {"data": "groups"},
+        "interactive": false,
+        "encode": {
+          "update": {
+            "x": {
+              "signal": "scale('x', datum.stack) + (datum.rightLabel ? bandwidth('x') + 8 : -8)"
+            },
+            "yc": {"signal": "(datum.scaledY0 + datum.scaledY1)/2"},
+            "align": {"signal": "datum.rightLabel ? 'left' : 'right'"},
+            "baseline": {"value": "middle"},
+            "fontWeight": {"value": "bold"},
+            "text": {
+              "signal": "abs(datum.scaledY0-datum.scaledY1) > 13 ? datum.grpId : ''"
+            }
+          }
+        }
+      },
+      {
+        "type": "group",
+        "data": [
+          {
+            "name": "dataForShowAll",
+            "values": [{}],
+            "transform": [{"type": "filter", "expr": "groupSelector"}]
+          }
+        ],
+        "encode": {
+          "enter": {
+            "xc": {"signal": "width/2"},
+            "y": {"value": 30},
+            "width": {"value": 80},
+            "height": {"value": 30}
+          }
+        },
+        "marks": [
+          {
+            "type": "group",
+            "name": "groupReset",
+            "from": {"data": "dataForShowAll"},
+            "encode": {
+              "enter": {
+                "cornerRadius": {"value": 6},
+                "fill": {"value": "#f5f5f5"},
+                "stroke": {"value": "#c1c1c1"},
+                "strokeWidth": {"value": 2},
+                "height": {"field": {"group": "height"}},
+                "width": {"field": {"group": "width"}}
+              },
+              "update": {"opacity": {"value": 1}},
+              "hover": {"opacity": {"value": 0.7}}
+            },
+            "marks": [
+              {
+                "type": "text",
+                "interactive": false,
+                "encode": {
+                  "enter": {
+                    "xc": {"field": {"group": "width"}, "mult": 0.5},
+                    "yc": {
+                      "field": {"group": "height"},
+                      "mult": 0.5,
+                      "offset": 2
+                    },
+                    "align": {"value": "center"},
+                    "baseline": {"value": "middle"},
+                    "fontWeight": {"value": "bold"},
+                    "text": {"value": "Show All"}
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "signals": [
+      {
+        "name": "groupHover",
+        "value": {},
+        "on": [
+          {
+            "events": "@groupMark:mouseover",
+            "update": "{stk1:datum.stack=='stk1' && datum.grpId, stk2:datum.stack=='stk2' && datum.grpId}"
+          },
+          {"events": "mouseout", "update": "{}"}
+        ]
+      },
+      {
+        "name": "groupSelector",
+        "value": false,
+        "on": [
+          {
+            "events": "@groupMark:click!",
+            "update": "{stack:datum.stack, stk1:datum.stack=='stk1' && datum.grpId, stk2:datum.stack=='stk2' && datum.grpId}"
+          },
+          {
+            "events": [
+              {"type": "click", "markname": "groupReset"},
+              {"type": "dblclick"}
+            ],
+            "update": "false"
+          }
+        ]
+      }
+    ]
+  }
