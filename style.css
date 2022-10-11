@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+}
+.navbar ul{
+    display:flex;
+    list-style: none;
+    margin: 20px;
+}
+.navbar ul li{
+    font-family: century;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 8px 25px;
+    transition: all .5 ease;
+}
+.navbar ul li a:hover{
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 10px white;
+}
+
+/* Home Section */
+#home{
+    display:flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 900px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+#home::before{
+    content:"";
+    position: absolute;
+    top:0;
+    right:0;
+    background: url('landmark.jpg') no-repeat center center/cover;
+    height: 900px;
+    width: 100%;
+    z-index: -1;
+    opacity: .6;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+.headings{
+    font-family: century;
+    font-size: 5rem;
+    text-align: left;
+}
+.phead{
+    font-family: century;
+    font-size: 3rem;
+    margin-bottom: 120px;
+}
+.pbody{
+    font-family: century;
+    font-size: 2rem;
+    top: 80%;
+}
+
+/* Choropleth */
+#Choropleth{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 30px;
+    background-color: rgba(64, 200, 224, 0.803);
+}
+.heading{
+    font-family: century;
+    font-size: 3rem;
+    text-align: center;
+    padding: 20px;
+}
+#map{
+    display: flex;
+}
+#choropleth_map{
+    width: 800px;
+    height: 400px;
+    margin-left: 50px;
+}
+#map_des{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding: 50px;
+}
+.hilight{
+    font-size: larger;
+    font-weight: bold;
+}
+
+/* plot1: Bubble Plot */
+#plot1{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+    background-color: rgba(64, 200, 224, 0.803);
+}
+.heading{
+    font-family: century;
+    font-size: 3rem;
+    text-align: center;
+    padding: 20px;
+}
+#bubble{
+    display: flex;
+}
+#bubble_plot{
+    width: 800px;
+    height: 400px;
+    margin-right: 80px;
+    margin-bottom: 100px;
+}
+#bubble_des{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding: 50px;
+}
