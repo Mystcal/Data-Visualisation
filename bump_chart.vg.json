@@ -9,7 +9,7 @@
     },
     "width": 600,
     "height": 400,
-    "data": {"url":"dataset/satisfication-expectancy.csv"
+    "data": {"url":"satisfication-expectancy.csv"
     },
     "params": [
       {
