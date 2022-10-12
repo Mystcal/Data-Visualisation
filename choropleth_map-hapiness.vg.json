@@ -22,7 +22,7 @@
       }
     ],
     
-    "mark": {"type": "geoshape","stroke": "lightgrey"},
+    "mark": {"type": "geoshape","stroke": "white"},
     "encoding": {
       "color": {
         "field": "Life_satisfaction",
