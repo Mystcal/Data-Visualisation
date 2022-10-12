@@ -4,6 +4,7 @@
     "height": 400,
     "data": {"url":"https://raw.githubusercontent.com/Mystcal/3179/main/satisfication-expectancy.csv"
     },
+    "background":"lightcyan",
     "params": [
       {
         "name": "Top_N",
