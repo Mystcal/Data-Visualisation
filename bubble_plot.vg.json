@@ -6,6 +6,7 @@
     "data": {
     "url": "https://raw.githubusercontent.com/Mystcal/3179/main/happiness-gdp.csv"
     },
+    "background": "rgb(241,241,241)",
     "transform": [{"filter": "Country_selection == null || datum.Country == Country_selection"},
                     {"filter": "datum.Population > Population_Above"}],
     "params":[
