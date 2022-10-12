@@ -57,20 +57,19 @@ html{
     height: 900px;
     width: 100%;
     z-index: -1;
-    opacity: .6;
+    opacity: .3;
 }
 .main{
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: center;
     position: absolute;
     top: 30%;
-    left: 10%;
 }
 .headings{
     font-family: century;
     font-size: 5rem;
-    text-align: left;
+    text-align: center;
 }
 .phead{
     font-family: century;
@@ -79,8 +78,10 @@ html{
 }
 .pbody{
     font-family: century;
-    font-size: 2rem;
-    top: 80%;
+    font-size: 1.5rem;
+    width:70%;
+    text-align: center;
+    padding-top: 40px;
 }
 
 /* Choropleth */
@@ -89,7 +90,7 @@ html{
     flex-direction: column;
     box-sizing: border-box;
     padding: 30px;
-    background-color: rgba(89, 168, 182, 0.803);
+    background-color: lightcyan;
 }
 .heading{
     font-family: century;
@@ -109,7 +110,7 @@ html{
     display: flex;
     flex-direction: column;
     text-align: justify;
-    padding: 50px;
+    padding: 150px;
 }
 .hilight{
     font-size: larger;
@@ -122,7 +123,7 @@ html{
     flex-direction: column;
     box-sizing: border-box;
     padding: 30px;
-    background-color: rgba(89, 168, 182, 0.803);
+    background-color: lightgray;
 }
 .heading{
     font-family: century;
@@ -152,7 +153,7 @@ html{
     flex-direction: column;
     box-sizing: border-box;
     padding: 30px;
-    background-color: rgba(89, 168, 182, 0.803);
+    background-color: lightcyan;
 }
 .heading{
     font-family: century;
@@ -172,19 +173,20 @@ html{
     display: flex;
     flex-direction: column;
     text-align: justify;
-    padding: 120px;
+    padding: 180px;
 }
 .hilight{
     font-size: larger;
     font-weight: bold;
 }
+
 /* Sankey */
 #plot3{
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    background-color: rgba(89, 168, 182, 0.803);
-    padding-top: 90px;
+    background-color: lightgrey;
+    padding-top: 30px;
 }
 .heading{
     font-family: century;
