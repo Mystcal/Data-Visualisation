@@ -9,7 +9,7 @@
       {
         "name": "Top_N",
         "value": 5,
-        "bind": {"input": "range", "min": 1, "max": 10, "step": 1}
+        "bind": {"input": "range", "min": 5, "max": 10, "step": 1}
       }
     ],
     "transform": [
